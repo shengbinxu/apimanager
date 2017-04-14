@@ -1,0 +1,90 @@
+<!-- sub header -->
+<header>
+	<div class="container navi-breadcrumb">
+		<ul class="breadcrumb">
+			<li> <a href="{:U('/index/')}">项目列表</a> <span class="divider">/</span> </li>
+			<li> <a class="active" href="{:U('project/index')}?id={$data.id}">{$data.name}</a> </li>
+		</ul>
+	</div>
+</header>
+
+<!-- body container -->
+<div class="container">
+	<div class="page-header">
+		<h1>项目详情</h1>
+		<!-- 接口操作按钮 -->
+		<a href="{:U('project/edit')}?id={$data.id}" class="btn btn-primary btn-small">编辑项目</a>
+		<a href="#myModal" class="btn btn-danger btn-small" role="button" data-toggle="modal">删除项目</a>
+		<a href="{:U('project/createcategory')}?projectid={$data.id}" class="btn btn-primary btn-small">新增分类</a>
+	    <!-- 接口删除提醒模态框 -->
+	    <div class="modal hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+				<h3 id="myModalLabel">项目删除确认</h3>
+			</div>
+			<div class="modal-body">
+				<p>一旦删除该项目，就无法恢复!</p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+				<button class="btn btn-danger" id="confirm_delete_button">删除</button>
+			</div>
+		</div>
+	</div>
+
+	<p class="lead">基本信息</p>
+	<table class="table table-bordered">
+		<tr>
+			<td>项目名称</td>
+			<td>{$data.name}</td>
+		</tr>
+		<tr>
+			<td>项目状态</td>
+			<td>{$projectStatus[$data['status']]}</td>
+		</tr>
+		<tr>
+			<td>正式服务器地址</td>
+			<td>{$data.host_product}</td>
+		</tr>
+		<tr>
+			<td>测试服务器地址</td>
+			<td>{$data.host_develop}</td>
+		</tr>
+		<tr>
+			<td>伪数据服务器地址</td>
+			<td>{$data.host_faker}</td>
+		</tr>
+	</table>
+
+	<p class="lead">项目说明</p>
+	<pre>{$data.detail}</pre>
+
+	
+	<p class="lead">所有接口</p>
+	<table class="table table-bordered">
+		<tr>
+			<td>
+				<if condition="$count">
+					共有{$count}个接口
+				<else />
+					暂无接口	
+				</if>				
+			</td>
+			<td>
+				<if condition="$count">
+					<a href="{:U('interface/index')}?projectid={$data.id}" class="btn">接口列表</a>
+				</if>
+				<a href="{:U('interface/create')}?projectid={$data.id}" class="btn"><i class="icon-plus inside"></i>新建接口</a>
+			</td>
+		</tr>
+
+	</table>
+</div> <!-- body container -->
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#confirm_delete_button").click(function() {
+			window.location.replace("{:U('project/del')}?id={$data.id}")
+		}) 
+	})
+</script>

@@ -1,0 +1,233 @@
+/* Add additional stylesheets below
+
+-------------------------------------------------- */
+
+/* Body and structure
+-------------------------------------------------- */
+
+body {
+	font-family: arial, sans-serif;
+	padding-top: 40px;
+}
+
+i {
+  margin-right:2px;
+  margin-left:15px;
+}
+
+i.inside {
+  margin-left: 2px;
+  margin-right: 2px
+}
+
+textarea {
+  width: 80%;
+  height: 100%;
+}
+
+.table td {
+  min-width: 150px;
+}
+
+div.btn-group {
+   display:inline-block; 
+   margin-left:-1px
+}
+
+.center-div {
+  margin: auto;
+  text-align: center;
+}
+
+li div.active {
+  background-color: #078bc9;
+}
+
+li div.active a {
+  color: #fff;
+}
+
+div.navi-breadcrumb {
+  margin-top: 40px;
+}
+
+div.navi-breadcrumb span.label {
+  margin-left: 8px;
+}
+
+/*interface 
+-------------------------------------------------- */
+pre.code-pre {
+  max-height:1200px;
+  overflow:auto;
+  border-color: #e5e5e5;
+  border-radius: 6px 6px 6px 6px;
+}
+
+.project-subinfo {
+   font-style: italic;
+   vertical-align: middle;
+ }
+
+.interface-info {
+  margin: 10px;
+  font-size: 19px;
+}
+
+.interface-subinfo {
+  margin-top: 15px;
+  font-style: italic;
+  vertical-align: middle;
+  color: rgb(90,90,90);
+}
+
+table td input {
+  width: 90%;
+}
+
+/*展示页面的header文字居中*/
+.center-header thead td {
+  text-align: center
+}
+
+.container .lead {
+  margin-top: 25px;
+  margin-bottom: 5px;
+}
+
+.container form legend {
+  margin-top: 25px;
+}
+
+.interface-button {
+  font-size: 14px;
+  margin-left: 28px;
+  margin-top: 50px;
+}
+
+.auto-width-text-area {
+  width :100%;
+}
+
+/*project*/
+.border-table-row {
+  margin-top: 30px;
+  border: 1px solid rgb(218,218,218);
+  border-radius: 6px 6px 6px 6px;
+  padding: 20px 0;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.075)
+}
+.project-preview {
+}
+.project-preview img {
+  width: 120px;
+}
+.project-info p {
+  margin-top: 15px;
+}
+.project-subinfo {
+  font-style: italic;
+  vertical-align: middle;
+}
+
+/*category*/
+.category-row {
+  margin-top: 30px;
+  border: 1px solid rgb(218,218,218);
+  border-radius: 6px 6px 6px 6px;
+  padding: 20px 0;
+  box-shadow: 0px 1px 2px rgba(0,0,0,0.075)
+}
+
+/* Subhead (other pages)
+------------------------- */
+.subhead {
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  position: relative;
+  padding: 40px 0;
+  margin-top: 0;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0,0,0,.4), 0 0 30px rgba(0,0,0,.075);
+  background: #020031; /* Old browsers */
+  background: -moz-linear-gradient(45deg,  #020031 0%, #6d3353 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left bottom, right top, color-stop(0%,#020031), color-stop(100%,#6d3353)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* IE10+ */
+  background: linear-gradient(45deg,  #020031 0%,#6d3353 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#020031', endColorstr='#6d3353',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+  -webkit-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+     -moz-box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+          box-shadow: inset 0 3px 7px rgba(0,0,0,.2), inset 0 -3px 7px rgba(0,0,0,.2);
+}
+.subhead a {
+  color: #fff;
+  color: rgba(255,255,255,.5);
+}
+.subhead a:hover {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255,255,255,.25);
+}
+.subhead h1 {
+  font-size: 50px;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+}
+.subhead p {
+  font-size: 24px;
+  font-weight: 300;
+  line-height: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.homepage-subhead {
+  text-align: left;
+}
+.subhead-content {
+  text-align: center;
+}
+
+/* Sidenav for Docs
+-------------------------------------------------- */
+.nav-header {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+/* page-header
+-------------------------------------------------- */
+.page-header h1 {
+	display: inline-block;
+	margin-right: 20px
+}
+.page-header a {
+	display: inline-block;
+	margin-right: 8px;
+	margin-top: -20px;
+}
+
+/* Footer
+-------------------------------------------------- */
+
+.footer {
+  padding: 70px 0;
+  margin-top: 70px;
+  border-top: 1px solid #e5e5e5;
+  background-color: #f5f5f5;
+}
+.footer p {
+  margin-bottom: 0;
+  color: #777;
+}
+
+
+/* tool
+-------------------------------------------------- */
+div.tool-div {
+  border: 1px solid #e5e5e5;
+  border-radius: 6px 6px 6px 6px;
+  margin: 40px 0px;
+  padding: 20px;
+}

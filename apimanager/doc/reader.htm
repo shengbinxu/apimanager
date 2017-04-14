@@ -1,0 +1,513 @@
+<html>
+
+<head>
+<meta name=标题 content="TG - API DOC">
+<meta name=关键词 content="">
+<meta http-equiv=Content-Type content="text/html; charset=x-mac-chinesesimp">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 14">
+<link rel=File-List href="%E8%AE%A2%E9%98%85%E6%A8%A1%E5%9D%97.files/filelist.xml">
+<title>TG - API DOC</title>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:1.0in .75in 1.0in .75in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-page-orientation:landscape;}
+.font8
+	{color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:宋体, sans-serif;
+	mso-font-charset:134;}
+.font9
+	{color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;}
+.font10
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;}
+.font12
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:宋体;
+	mso-generic-font-family:auto;
+	mso-font-charset:134;}
+.font13
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;}
+.font14
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:宋体;
+	mso-generic-font-family:auto;
+	mso-font-charset:134;}
+.style69
+	{color:blue;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:underline;
+	text-underline-style:single;
+	font-family:宋体, sans-serif;
+	mso-font-charset:134;
+	mso-style-name:超链接;
+	mso-style-id:8;}
+a:link
+	{color:blue;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:underline;
+	text-underline-style:single;
+	font-family:宋体, sans-serif;
+	mso-font-charset:134;}
+a:visited
+	{color:purple;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:underline;
+	text-underline-style:single;
+	font-family:宋体, sans-serif;
+	mso-font-charset:134;}
+.style0
+	{mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	white-space:nowrap;
+	mso-rotate:0;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:宋体, sans-serif;
+	mso-font-charset:134;
+	border:none;
+	mso-protection:locked visible;
+	mso-style-name:普通;
+	mso-style-id:0;}
+td
+	{mso-style-parent:style0;
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:宋体, sans-serif;
+	mso-font-charset:134;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-protection:locked visible;
+	white-space:nowrap;
+	mso-rotate:0;}
+.xl65
+	{mso-style-parent:style0;
+	font-weight:700;}
+.xl66
+	{mso-style-parent:style69;
+	color:blue;
+	text-decoration:underline;
+	text-underline-style:single;}
+.xl67
+	{mso-style-parent:style0;
+	border:.5pt solid gray;}
+.xl68
+	{mso-style-parent:style0;
+	font-size:11.0pt;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	vertical-align:top;
+	border:.5pt solid gray;
+	white-space:normal;}
+.xl69
+	{mso-style-parent:style0;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	white-space:normal;}
+.xl70
+	{mso-style-parent:style0;
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	white-space:normal;}
+.xl71
+	{mso-style-parent:style0;
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt solid gray;}
+.xl72
+	{mso-style-parent:style0;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt solid gray;}
+.xl73
+	{mso-style-parent:style0;
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl74
+	{mso-style-parent:style0;
+	font-size:11.0pt;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	vertical-align:top;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl75
+	{mso-style-parent:style0;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;}
+.xl76
+	{mso-style-parent:style0;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl77
+	{mso-style-parent:style0;
+	font-size:11.0pt;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl78
+	{mso-style-parent:style0;
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;}
+.xl79
+	{mso-style-parent:style0;
+	font-weight:700;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt solid gray;}
+.xl80
+	{mso-style-parent:style0;
+	font-weight:700;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;}
+.xl81
+	{mso-style-parent:style0;
+	font-weight:700;
+	text-align:center;
+	border:.5pt solid gray;
+	background:#D9D9D9;
+	mso-pattern:black none;}
+.xl82
+	{mso-style-parent:style0;
+	border:.5pt solid gray;
+	background:#D9D9D9;
+	mso-pattern:black none;}
+.xl83
+	{mso-style-parent:style0;
+	font-weight:700;
+	border:.5pt solid gray;}
+.xl84
+	{mso-style-parent:style0;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	text-align:left;
+	vertical-align:top;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl85
+	{mso-style-parent:style0;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	text-align:left;
+	vertical-align:top;
+	border:.5pt solid gray;
+	white-space:normal;}
+.xl86
+	{mso-style-parent:style0;
+	color:#3366FF;
+	font-weight:700;
+	font-family:宋体;
+	mso-generic-font-family:auto;
+	mso-font-charset:134;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt solid gray;}
+.xl87
+	{mso-style-parent:style0;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	white-space:normal;}
+.xl88
+	{mso-style-parent:style0;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl89
+	{mso-style-parent:style0;
+	color:black;
+	font-size:11.0pt;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	white-space:normal;}
+.xl90
+	{mso-style-parent:style0;
+	color:black;
+	font-size:11.0pt;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl91
+	{mso-style-parent:style0;
+	color:black;
+	font-size:11.0pt;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	text-align:left;
+	vertical-align:top;
+	border:.5pt solid gray;
+	white-space:normal;}
+.xl92
+	{mso-style-parent:style0;
+	font-weight:700;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;
+	white-space:normal;}
+ruby
+	{ruby-align:left;}
+rt
+	{color:windowtext;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:宋体, sans-serif;
+	mso-font-charset:134;
+	mso-char-type:none;
+	display:none;}
+-->
+</style>
+</head>
+
+<body link=blue vlink=purple class=xl67>
+
+<table border=0 cellpadding=0 cellspacing=0 width=589 style='border-collapse:
+ collapse;table-layout:fixed;width:589pt'>
+ <col class=xl67 width=95 style='mso-width-source:userset;mso-width-alt:4053;
+ width:95pt'>
+ <col class=xl83 width=129 style='mso-width-source:userset;mso-width-alt:5504;
+ width:129pt'>
+ <col class=xl67 width=107 style='mso-width-source:userset;mso-width-alt:4565;
+ width:107pt'>
+ <col class=xl67 width=258 style='mso-width-source:userset;mso-width-alt:11008;
+ width:258pt'>
+ <tr height=15 style='height:15.0pt'>
+  <td height=15 class=xl86 width=95 style='height:15.0pt;width:95pt'>订阅模块</td>
+  <td class=xl83 width=129 style='border-left:none;width:129pt'>　</td>
+  <td class=xl67 width=107 style='border-left:none;width:107pt'>　</td>
+  <td class=xl67 width=258 style='border-left:none;width:258pt'>　</td>
+ </tr>
+ <tr class=xl82 height=15 style='height:15.0pt'>
+  <td height=15 class=xl81 style='height:15.0pt;border-top:none'>API</td>
+  <td class=xl81 style='border-top:none;border-left:none'>描述</td>
+  <td class=xl81 style='border-top:none;border-left:none'>入参</td>
+  <td class=xl81 style='border-top:none;border-left:none'>输出数据</td>
+ </tr>
+ <tr height=162 style='mso-height-source:userset;height:162.0pt'>
+  <td height=162 class=xl79 style='height:162.0pt;border-top:none'>reader/</td>
+  <td class=xl79 style='border-top:none;border-left:none'>获取用户已订阅列表</td>
+  <td class=xl71 style='border-top:none;border-left:none'>用户ID：uid(int)</td>
+  <td class=xl68 width=258 style='border-top:none;border-left:none;width:258pt'>{<br>
+      result:[<br>
+          {<br>
+              &quot;rid&quot;: 1,<br>
+              &quot;title&quot;:&quot;<font
+  class="font12">新游预告</font><font class="font10">&quot;,<br>
+  <span
+  style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>&quot;ico&quot;:&quot;http://img2.taiyou.co/ico.jpg&quot;<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>},<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>...<br>
+  ],<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+  </span>&quot;errorCode&quot;: 0<br>
+  }</font></td>
+ </tr>
+ <tr class=xl75 height=178 style='mso-height-source:userset;height:178.0pt'>
+  <td height=178 class=xl80 style='height:178.0pt;border-top:none'>reader/rlist</td>
+  <td class=xl80 style='border-top:none;border-left:none'>获取订阅列表</td>
+  <td class=xl73 width=107 style='border-top:none;border-left:none;width:107pt'>用户ID：uid(int)<br>
+  订阅ID：rid(int)<br>
+  rid=0为一级订阅列表</td>
+  <td class=xl74 width=258 style='border-top:none;border-left:none;width:258pt'>{<br>
+      result:[<br>
+          {<br>
+              &quot;rid&quot;: 1,<br>
+              &quot;rname&quot;:&quot;<font
+  class="font12">放开那三国</font><font class="font10">&quot;,<br>
+  <span
+  style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>&quot;istree&quot;:true,<br>
+  <span
+  style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>&quot;ismark&quot;:false<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>},<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>...<br>
+  ],<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+  </span>&quot;errorCode&quot;: 0<br>
+  }</font></td>
+ </tr>
+ <tr height=49 style='mso-height-source:userset;height:49.0pt'>
+  <td height=49 class=xl79 style='height:49.0pt;border-top:none'>reader/mark</td>
+  <td class=xl79 style='border-top:none;border-left:none'>用户新增订阅</td>
+  <td class=xl87 width=107 style='border-top:none;border-left:none;width:107pt'>用户ID：uid(int)<br>
+  订阅ID：rid(int)</td>
+  <td class=xl68 width=258 style='border-top:none;border-left:none;width:258pt'>{<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+  </span>&quot;errorCode&quot;: 0<br>
+  }</td>
+ </tr>
+ <tr class=xl75 height=42 style='page-break-before:always;height:42.0pt'>
+  <td height=42 class=xl80 style='height:42.0pt;border-top:none'>reader/del</td>
+  <td class=xl80 style='border-top:none;border-left:none'>用户取消订阅</td>
+  <td class=xl76 width=107 style='border-top:none;border-left:none;width:107pt'>用户ID：uid(int)<br>
+  订阅ID：rid(int)</td>
+  <td class=xl74 width=258 style='border-top:none;border-left:none;width:258pt'>{<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+  </span>&quot;errorCode&quot;: 0<br>
+  }</td>
+ </tr>
+ <tr height=179 style='mso-height-source:userset;height:179.0pt'>
+  <td height=179 class=xl79 style='height:179.0pt;border-top:none'>reader/search</td>
+  <td class=xl79 style='border-top:none;border-left:none'>用户搜索订阅</td>
+  <td class=xl70 width=107 style='border-top:none;border-left:none;width:107pt'>用户ID：uid(int)<br>
+  关键词：keyword(string)</td>
+  <td class=xl68 width=258 style='border-top:none;border-left:none;width:258pt'>{<br>
+      result:[<br>
+          {<br>
+              &quot;rid&quot;: 1,<br>
+              &quot;rname&quot;:&quot;<font
+  class="font12">放开那三国</font><font class="font10">&quot;,<br>
+  <span
+  style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>&quot;istree&quot;:true,<br>
+  <span
+  style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>&quot;ismark&quot;:false<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>},<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>...<br>
+  ],<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+  </span>&quot;errorCode&quot;: 0<br>
+  }</font></td>
+ </tr>
+ <tr class=xl75 height=68 style='mso-height-source:userset;height:68.0pt'>
+  <td height=68 class=xl80 style='height:68.0pt;border-top:none'>reader/sort</td>
+  <td class=xl80 style='border-top:none;border-left:none'>用户已订阅列表排序</td>
+  <td class=xl88 width=107 style='border-top:none;border-left:none;width:107pt'>用户ID：uid(int)<br>
+  排序ID：sortids(string)，例：1|2|5|6</td>
+  <td class=xl77 width=258 style='border-top:none;border-left:none;width:258pt'>{<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+  </span>&quot;errorCode&quot;: 0<br>
+  }</td>
+ </tr>
+ <tr height=15 style='height:15.0pt'>
+  <td height=15 class=xl79 style='height:15.0pt;border-top:none'>　</td>
+  <td class=xl79 style='border-top:none;border-left:none'>　</td>
+  <td class=xl67 style='border-top:none;border-left:none'>　</td>
+  <td class=xl67 style='border-top:none;border-left:none'>　</td>
+ </tr>
+</table>
+
+</body>
+
+</html>

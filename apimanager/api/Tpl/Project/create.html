@@ -1,0 +1,50 @@
+<!-- navigation bar -->
+<header>
+	<div class="container navi-breadcrumb">
+		<ul class="breadcrumb">
+			<li><a href="{:U('/index/')}">项目列表</a><span class="divider">/</span> </li>
+        	<li><a class="active" href="{:U('project/create')}">新建工程</a></li>
+           
+		</ul>
+	</div>
+</header>
+
+<!-- body container -->
+<div class="container">
+	<form action="{:U('project/create')}" method="POST">
+		<!-- basic information	 -->
+		<legend>基本信息</legend>
+		<label for="">项目名称</label>
+		<input type="text" name="name" placeholder="必填" value="">
+		<label for="">项目状态</label>
+		<select name="status" id="">
+			<foreach name="projectStatus" item="vo" key="k">
+				<option value="{$k}">{$vo}</option>
+			</foreach>
+		</select>
+
+		<!-- server path -->
+		<legend>服务器地址</legend>
+		<label for="">正式服务器</label>
+		<input type="text" name="host_product" class="input-xlarge" placeholder="选填" >
+		<label for="">测试服务器</label>
+		<input type="text" name="host_develop" class="input-xlarge" placeholder="选填">
+		<label for="">伪数据服务器</label>
+		<input type="text" name="host_faker" class="input-xlarge" placeholder="选填">
+		<p><i class="icon-exclamation-sign"></i>必须以http://开头, 可以包含API路径</p>
+
+		
+
+		<legend>项目说明</legend>
+		<textarea name="detail" id="" rows="20"></textarea>
+	
+
+		<div class="row">
+			<div class="span4 offset4">
+				<a href="javascript:void(0);" onclick="javascript:history.go(-1);"  class="btn btn-large interface-button" >取消并返回</a>
+				<button class="btn btn-large btn-success interface-button"  type="submit">提交项目</button>
+			</div>
+		</div>
+	</form>
+</div> <!-- body container -->
+

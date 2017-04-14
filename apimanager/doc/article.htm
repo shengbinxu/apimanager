@@ -1,0 +1,537 @@
+<html>
+
+<head>
+<meta name=标题 content="TG - API DOC">
+<meta name=关键词 content="">
+<meta http-equiv=Content-Type content="text/html; charset=x-mac-chinesesimp">
+<meta name=ProgId content=Excel.Sheet>
+<meta name=Generator content="Microsoft Excel 14">
+<link rel=File-List href="%E6%96%87%E7%AB%A0%E6%A8%A1%E5%9D%97.files/filelist.xml">
+<title>TG - API DOC</title>
+<style>
+<!--table
+	{mso-displayed-decimal-separator:"\.";
+	mso-displayed-thousand-separator:"\,";}
+@page
+	{margin:1.0in 1.0in 1.0in 1.0in;
+	mso-header-margin:.5in;
+	mso-footer-margin:.5in;
+	mso-page-orientation:landscape;}
+.font8
+	{color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:宋体, sans-serif;
+	mso-font-charset:134;}
+.font9
+	{color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;}
+.font10
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;}
+.font12
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:宋体;
+	mso-generic-font-family:auto;
+	mso-font-charset:134;}
+.font13
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;}
+.font14
+	{color:black;
+	font-size:11.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:宋体;
+	mso-generic-font-family:auto;
+	mso-font-charset:134;}
+.style69
+	{color:blue;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:underline;
+	text-underline-style:single;
+	font-family:宋体, sans-serif;
+	mso-font-charset:134;
+	mso-style-name:超链接;
+	mso-style-id:8;}
+a:link
+	{color:blue;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:underline;
+	text-underline-style:single;
+	font-family:宋体, sans-serif;
+	mso-font-charset:134;}
+a:visited
+	{color:purple;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:underline;
+	text-underline-style:single;
+	font-family:宋体, sans-serif;
+	mso-font-charset:134;}
+.style0
+	{mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	white-space:nowrap;
+	mso-rotate:0;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:宋体, sans-serif;
+	mso-font-charset:134;
+	border:none;
+	mso-protection:locked visible;
+	mso-style-name:普通;
+	mso-style-id:0;}
+td
+	{mso-style-parent:style0;
+	padding-top:1px;
+	padding-right:1px;
+	padding-left:1px;
+	mso-ignore:padding;
+	color:black;
+	font-size:12.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:宋体, sans-serif;
+	mso-font-charset:134;
+	mso-number-format:General;
+	text-align:general;
+	vertical-align:bottom;
+	border:none;
+	mso-background-source:auto;
+	mso-pattern:auto;
+	mso-protection:locked visible;
+	white-space:nowrap;
+	mso-rotate:0;}
+.xl65
+	{mso-style-parent:style0;
+	font-weight:700;}
+.xl66
+	{mso-style-parent:style69;
+	color:blue;
+	text-decoration:underline;
+	text-underline-style:single;}
+.xl67
+	{mso-style-parent:style0;
+	border:.5pt solid gray;}
+.xl68
+	{mso-style-parent:style0;
+	font-size:11.0pt;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	vertical-align:top;
+	border:.5pt solid gray;
+	white-space:normal;}
+.xl69
+	{mso-style-parent:style0;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	white-space:normal;}
+.xl70
+	{mso-style-parent:style0;
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	white-space:normal;}
+.xl71
+	{mso-style-parent:style0;
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt solid gray;}
+.xl72
+	{mso-style-parent:style0;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt solid gray;}
+.xl73
+	{mso-style-parent:style0;
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl74
+	{mso-style-parent:style0;
+	font-size:11.0pt;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	vertical-align:top;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl75
+	{mso-style-parent:style0;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;}
+.xl76
+	{mso-style-parent:style0;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl77
+	{mso-style-parent:style0;
+	font-size:11.0pt;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl78
+	{mso-style-parent:style0;
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;}
+.xl79
+	{mso-style-parent:style0;
+	font-weight:700;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt solid gray;}
+.xl80
+	{mso-style-parent:style0;
+	font-weight:700;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;}
+.xl81
+	{mso-style-parent:style0;
+	font-weight:700;
+	text-align:center;
+	border:.5pt solid gray;
+	background:#D9D9D9;
+	mso-pattern:black none;}
+.xl82
+	{mso-style-parent:style0;
+	border:.5pt solid gray;
+	background:#D9D9D9;
+	mso-pattern:black none;}
+.xl83
+	{mso-style-parent:style0;
+	font-weight:700;
+	border:.5pt solid gray;}
+.xl84
+	{mso-style-parent:style0;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	text-align:left;
+	vertical-align:top;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl85
+	{mso-style-parent:style0;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	text-align:left;
+	vertical-align:top;
+	border:.5pt solid gray;
+	white-space:normal;}
+.xl86
+	{mso-style-parent:style0;
+	color:#3366FF;
+	font-weight:700;
+	font-family:宋体;
+	mso-generic-font-family:auto;
+	mso-font-charset:134;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt solid gray;}
+.xl87
+	{mso-style-parent:style0;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	white-space:normal;}
+.xl88
+	{mso-style-parent:style0;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl89
+	{mso-style-parent:style0;
+	color:black;
+	font-size:11.0pt;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	white-space:normal;}
+.xl90
+	{mso-style-parent:style0;
+	color:black;
+	font-size:11.0pt;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	text-align:left;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;
+	white-space:normal;}
+.xl91
+	{mso-style-parent:style0;
+	color:black;
+	font-size:11.0pt;
+	font-family:Verdana;
+	mso-generic-font-family:auto;
+	mso-font-charset:0;
+	mso-number-format:"\@";
+	text-align:left;
+	vertical-align:top;
+	border:.5pt solid gray;
+	white-space:normal;}
+.xl92
+	{mso-style-parent:style0;
+	font-weight:700;
+	text-align:center;
+	vertical-align:middle;
+	border:.5pt solid gray;
+	background:#DAEEF3;
+	mso-pattern:black none;
+	white-space:normal;}
+ruby
+	{ruby-align:left;}
+rt
+	{color:windowtext;
+	font-size:9.0pt;
+	font-weight:400;
+	font-style:normal;
+	text-decoration:none;
+	font-family:宋体, sans-serif;
+	mso-font-charset:134;
+	mso-char-type:none;
+	display:none;}
+-->
+</style>
+</head>
+
+<body link=blue vlink=purple class=xl67>
+
+<table border=0 cellpadding=0 cellspacing=0 width=624 style='border-collapse:
+ collapse;table-layout:fixed;width:624pt'>
+ <col class=xl67 width=101 style='mso-width-source:userset;mso-width-alt:4309;
+ width:101pt'>
+ <col class=xl83 width=115 style='mso-width-source:userset;mso-width-alt:4906;
+ width:115pt'>
+ <col class=xl67 width=107 style='mso-width-source:userset;mso-width-alt:4565;
+ width:107pt'>
+ <col class=xl67 width=301 style='mso-width-source:userset;mso-width-alt:12842;
+ width:301pt'>
+ <tr height=15 style='height:15.0pt'>
+  <td height=15 class=xl86 width=101 style='height:15.0pt;width:101pt'>文章模块</td>
+  <td class=xl83 width=115 style='border-left:none;width:115pt'>　</td>
+  <td class=xl67 width=107 style='border-left:none;width:107pt'>　</td>
+  <td class=xl67 width=301 style='border-left:none;width:301pt'>　</td>
+ </tr>
+ <tr class=xl82 height=15 style='height:15.0pt'>
+  <td height=15 class=xl81 style='height:15.0pt;border-top:none'>API</td>
+  <td class=xl81 style='border-top:none;border-left:none'>描述</td>
+  <td class=xl81 style='border-top:none;border-left:none'>入参</td>
+  <td class=xl81 style='border-top:none;border-left:none'>输出数据</td>
+ </tr>
+ <tr height=209 style='mso-height-source:userset;height:209.0pt'>
+  <td height=209 class=xl79 style='height:209.0pt;border-top:none'>article/</td>
+  <td class=xl79 style='border-top:none;border-left:none'>获取文章列表</td>
+  <td class=xl71 style='border-top:none;border-left:none'>订阅ID：rid(int)</td>
+  <td class=xl68 width=301 style='border-top:none;border-left:none;width:301pt'>{<br>
+      result:[<br>
+          {<br>
+              &quot;aid&quot;: 1,<br>
+              &quot;title&quot;:&quot;<font
+  class="font12">《放开那三国》新手攻略与后期规划</font><font class="font10">&quot;,<br>
+              &quot;pic&quot;:&quot;http://img2.taiyou.co/pic.jpg&quot;,<br>
+              &quot;media&quot;:</font><font
+  class="font12">任玩堂</font><font class="font10">,<br>
+              &quot;pubdate&quot;:&quot;1</font><font
+  class="font12">天前</font><font class="font10">&quot;<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>},<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>...<br>
+  ],<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+  </span>&quot;totalCount&quot;:18,<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+  </span>&quot;errorCode&quot;: 0<br>
+  }</font></td>
+ </tr>
+ <tr class=xl75 height=176 style='mso-height-source:userset;height:176.0pt'>
+  <td height=176 class=xl80 style='height:176.0pt;border-top:none'>article/body</td>
+  <td class=xl80 style='border-top:none;border-left:none'>获取文章内容</td>
+  <td class=xl73 width=107 style='border-top:none;border-left:none;width:107pt'>文章ID：aid(int)</td>
+  <td class=xl74 width=301 style='border-top:none;border-left:none;width:301pt'>{<br>
+      result:[<br>
+          {<br>
+              &quot;aid&quot;: 1,<br>
+              &quot;body&quot;:&quot;<font
+  class="font12">放开那三国</font><font class="font10">&quot;,<br>
+  <span
+  style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>&quot;isfav&quot;:false,<br>
+  <span
+  style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>&quot;comment_count&quot;:5<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>},<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>...<br>
+  ],<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+  </span>&quot;errorCode&quot;: 0<br>
+  }</font></td>
+ </tr>
+ <tr height=167 style='page-break-before:always;mso-height-source:userset;
+  height:167.0pt'>
+  <td height=167 class=xl79 style='height:167.0pt;border-top:none'>article/comments</td>
+  <td class=xl79 style='border-top:none;border-left:none'>获取文章评论</td>
+  <td class=xl70 width=107 style='border-top:none;border-left:none;width:107pt'>文章ID：aid(int)</td>
+  <td class=xl68 width=301 style='border-top:none;border-left:none;width:301pt'>{<br>
+      &quot;result&quot;:[<br>
+          {<br>
+              &quot;uid&quot;: 1,<br>
+              &quot;uname&quot;:&quot;<font
+  class="font12">九章</font><font class="font10">&quot;,<br>
+              &quot;content&quot;:&quot;</font><font
+  class="font12">这是一条评论</font><font class="font10">&quot;<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>},<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>...<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp; </span>],<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+  </span>&quot;errorCode&quot;: 0<br>
+  }</font></td>
+ </tr>
+ <tr class=xl75 height=45 style='mso-height-source:userset;height:45.0pt'>
+  <td height=45 class=xl80 style='height:45.0pt;border-top:none'>article/fav</td>
+  <td class=xl80 style='border-top:none;border-left:none'>收藏文章</td>
+  <td class=xl76 width=107 style='border-top:none;border-left:none;width:107pt'>用户ID：uid(int)<br>
+  文章ID：aid(int)</td>
+  <td class=xl74 width=301 style='border-top:none;border-left:none;width:301pt'>{<font
+  class="font10"><br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+  </span>&quot;errorCode&quot;: 0<br>
+  }</font></td>
+ </tr>
+ <tr height=150 style='mso-height-source:userset;height:150.0pt'>
+  <td height=150 class=xl79 style='height:150.0pt;border-top:none'>article/share</td>
+  <td class=xl79 style='border-top:none;border-left:none'>分享文章</td>
+  <td class=xl70 width=107 style='border-top:none;border-left:none;width:107pt'>文章ID：aid(int)</td>
+  <td class=xl68 width=301 style='border-top:none;border-left:none;width:301pt'>{<br>
+      result:[<br>
+          {<br>
+              &quot;content&quot;: &quot;http://www.taiyou.co/a/22.html<font
+  class="font12">，发现了一篇精彩文章，来自太游的分享。</font><font class="font10">&quot;<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>}<br>
+  ],<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+  </span>&quot;errorCode&quot;: 0<br>
+  }</font></td>
+ </tr>
+ <tr class=xl75 height=269 style='page-break-before:always;mso-height-source:
+  userset;height:269.0pt'>
+  <td height=269 class=xl80 style='height:269.0pt;border-top:none'>article/cache</td>
+  <td class=xl80 style='border-top:none;border-left:none'>离线下载</td>
+  <td class=xl78 style='border-top:none;border-left:none'>订阅ID：rid(int)</td>
+  <td class=xl74 width=301 style='border-top:none;border-left:none;width:301pt'>{<br>
+      result:[<br>
+          {<br>
+              &quot;aid&quot;: 1,<br>
+              &quot;title&quot;:&quot;<font
+  class="font12">《放开那三国》新手攻略与后期规划</font><font class="font10">&quot;,<br>
+              &quot;pic&quot;:&quot;http://img2.taiyou.co/pic.jpg&quot;,<br>
+              &quot;media&quot;:</font><font
+  class="font12">任玩堂</font><font class="font10">,<br>
+              &quot;pubdate&quot;:&quot;1</font><font
+  class="font12">天前</font><font class="font10">&quot;,<br>
+              &quot;body&quot;: &quot;&lt;html&gt;&lt;body&gt;</font><font
+  class="font12">文章内容</font><font class="font10">&lt;body&gt;&lt;/html&gt;&quot;,<br>
+  <span
+  style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>&quot;isfav&quot;:false,<br>
+  <span
+  style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>&quot;comment_count&quot;:12<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>},<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  </span>...<br>
+  ],<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+  </span>&quot;totalCount&quot;:18,<br>
+  <span style="mso-spacerun:yes">&nbsp;&nbsp;&nbsp;
+  </span>&quot;errorCode&quot;: 0<br>
+  }</font></td>
+ </tr>
+</table>
+
+</body>
+
+</html>

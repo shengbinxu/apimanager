@@ -1,0 +1,381 @@
+<!-- sub header -->
+<header>
+	<div class="container navi-breadcrumb">
+		<ul class="breadcrumb">
+			<li> <a href="{:U('/index/')}">项目列表</a> <span class="divider">/</span> </li>
+            <li><a href="{:U('project/index')}?id={$projectData.id}">{$projectData.name}</a><span class="divider">/</span></li>
+            <li><a href="{:U('interface/index')}?projectid={$projectData.id}">接口列表</a><span class="divider">/</span></li>
+	        <li><a class="active" href="{:U('interface/create')}?projectid={$projectData.id}">新建接口</a></li>
+
+		</ul>
+	</div>
+</header>
+
+<div class="container">
+	<form id="createinterface" action="{:U('interface/create')}" method="post">
+
+		<!-- basic information -->
+		<legend>接口基本信息</legend>
+		<label for="">接口名称</label>
+		<input type="text" placeholder="必填" name="name">
+		<label for="">http类型</label>
+		<select id="http-type-select" name="http_type">
+			<foreach name="httpStatus" item="vo" key="k">
+				<option value="{$k}">{$vo}</option>
+			</foreach>
+		</select>
+		<label for="">所属类别</label>
+		<select name="category_id">
+			<foreach name="categoryData" item="vo" key="k">
+				<option value="{$k}">{$vo}</option>
+			</foreach>
+			<option value="0">其他</option>
+		</select>
+
+		<label for="">接口说明</label>
+		<textarea name="detail" id="" rows="10"></textarea>
+
+		<legend>接口地址</legend>
+		<label for="">正式服务器接口地址</label>
+		<input type="text" placeholder="选填" name="path_product" >
+		<label for="">测试服务器接口地址</label>
+		<input type="text" placeholder="选填" name="path_develop">
+		<label for="">伪数据服务器接口地址</label>
+		<input type="text" placeholder="选填" name="path_faker" >
+		<span class="help-block"><i class="icon-exclamation-sign"></i> 接口地址如果不包含http，则自动和project host合并成该接口的path</span>
+
+		
+
+		<!-- input parameters -->
+		<legend>输入参数</legend>
+			<!-- refresh data -->
+		<p> <i class="icon-globe"></i>输入实例:</p>
+		<div>
+			<input type="text" style="margin-top:9px" class="span4" name="input_url" /> 
+			<a class="btn" id="refresh-input-params-button"><i class="icon-refresh inside"></i></a>
+		</div>
+		<table class="table" id="input_params_table">
+			<thead>
+				<tr>
+					<td>参数名称</td>
+					<td>输入值实例</td>
+					<td>说明</td>
+					<td>类型</td>
+					<td>
+						<a class="add_input_param_button"><i class="icon-plus"></i></a>
+					</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="text" placeholder="必填" name="input_name[]"></td>
+					<td><input type="text" placeholder="选填" name="input_sample[]"></td>
+					<td><input type="text" placeholder="选填" name="input_detail[]"></td>
+					<td>string</td>
+					<td>
+						<a class="delete_param_button"><i class="icon-minus"></i></a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div id="output-success">
+			<!-- 输出成功参数 -->
+			<legend>请求成功时输出数据</legend>
+
+				<!-- refresh data -->
+			<p> <i class="icon-ok"></i>在线获取数据:</p>
+			<div>
+				<input type="text" style="margin-top:9px" class="span4" name="success_url" /> 
+				<a class="btn refresh-output-button"><i class="icon-refresh inside"></i></a>
+			</div>
+
+			<p style="margin-top:30px">
+				<!-- 成功时返回值伪数据  -->
+				<i class="icon-ok"></i>示例:
+				<a class="btn format-output-button" style="margin-left:20px">格式化数据</a> 
+			</p>
+			<textarea name="output_success" rows="40" class="lined"></textarea>
+
+				<!-- 参数说明 -->
+			<p style="margin-top:30px">
+				<i class="icon-ok"></i>参数说明:
+				<a class="btn output-gen-button" style="margin-left:20px">从示例生成</a> 
+			</p>
+			<table class="table output-success-table">
+				<thead>
+					<tr>
+						<td>参数路径</td>
+						<td>输入值实例</td>
+						<td>说明</td>
+						<td>类型</td>
+						<td>
+							<a class="add_success_out_param_button" ><i class="icon-plus"></i></a>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					
+				<tr>
+					<td><input type="text" placeholder="必填" name="output_success_name[]"></td>
+					<td><input type="text" placeholder="选填" name="output_success_sample[]"></td>
+					<td><input type="text" placeholder="选填" name="output_success_detail[]"></td>
+					<td><input type="text" placeholder="选填" name="output_success_type[]"></td>
+					<td>
+						<a class="delete_param_button"><i class="icon-minus"></i></a>
+					</td>
+				</tr>
+					
+				</tbody>
+			</table>
+		</div>
+
+		<!-- 输出失败数据 -->
+		<div id="output-fail">
+			<!-- 输出成功参数 -->
+			<legend>请求失败时输出数据</legend>
+
+				<!-- refresh data -->
+			<p> <i class="icon-remove"></i>在线获取数据:</p>
+			<div>
+				<input type="text" style="margin-top:9px" class="span4" name="fail_url" /> 
+				<a class="btn refresh-output-button"><i class="icon-refresh inside"></i></a>
+			</div>
+
+			<p style="margin-top:30px">
+				<!-- 成功时返回值伪数据  -->
+				<i class="icon-remove"></i>示例:
+				<a class="btn format-output-button" style="margin-left:20px">格式化数据</a> 
+			</p>
+			<textarea name="output_fail" rows="25" class="lined"></textarea>
+
+				<!-- 参数说明 -->
+			<p style="margin-top:30px">
+				<i class="icon-remove"></i>参数说明:
+				<a class="btn output-gen-button" style="margin-left:20px">从示例生成</a> 
+			</p>
+			<table class="table output-fail-table">
+				<thead>
+					<tr>
+						<td>参数路径</td>
+						<td>输入值实例</td>
+						<td>说明</td>
+						<td>类型</td>
+						<td>
+							<a class="add_fail_out_param_button" ><i class="icon-plus"></i></a>
+						</td>
+					</tr>
+				</thead>
+				<tbody>
+					
+					<tr>
+						<td><input type="text" placeholder="必填" name="output_fail_name[]"></td>
+						<td><input type="text" placeholder="选填" name="output_fail_sample[]"></td>
+						<td><input type="text" placeholder="选填" name="output_fail_detail[]"></td>
+						<td><input type="text" placeholder="选填" name="output_fail_type[]"></td>
+						<td>
+							<a class="delete_param_button"><i class="icon-minus"></i></a>
+						</td>
+					</tr>
+		
+				</tbody>
+			</table>
+		</div>
+	
+
+		<div class="row center-div">
+			<input type="hidden" name="id" value="{$projectData.id}" />
+			<a href="javascript:void(0);" onclick="javascript:history.go(-1);"  class="btn btn-large interface-button" >取消并返回</a>
+			<button class="btn btn-large btn-success interface-button"  type="submit">提交接口</button>
+		</div>
+	</form>
+</div>
+
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#createinterface").validate({
+			rules:{
+				name:{required:true}
+			},
+			messages:{
+				name:{required:"接口名称必填"}
+			}
+		}); 
+		
+		
+		// 获取输出参数row string
+		function getOutputSuccessParamRowString(id) {
+			var str = "<tr id='" + id + "'>" +
+						  "<td><input type='text' placeholder='必填' name='output_success_name[]'></td>" + 
+						  "<td><input type='text' placeholder='选填' name='output_success_sample[]'></td>" + 
+						  "<td><input type='text' placeholder='选填' name='output_success_detail[]'></td>" + 
+						  "<td><input type='text' placeholder='选填' name='output_success_type[]'></td>" +
+						  "<td>" + 
+						  "	 <a class='delete_param_button'><i class='icon-minus'></i></a>" + 
+						  "</td>" + 
+				      "</tr>";
+			return str;
+		}
+		function getOutputFailParamRowString(id) {
+			var str = "<tr id='" + id + "'>" +
+						  "<td><input type='text' placeholder='必填' name='output_fail_name[]'></td>" + 
+						  "<td><input type='text' placeholder='选填' name='output_fail_sample[]'></td>" + 
+						  "<td><input type='text' placeholder='选填' name='output_fail_detail[]'></td>" + 
+						  "<td><input type='text' placeholder='选填' name='output_fail_type[]'></td>" +
+						  "<td>" + 
+						  "	 <a class='delete_param_button'><i class='icon-minus'></i></a>" + 
+						  "</td>" + 
+				      "</tr>";
+			return str;
+		}
+
+		// 获取代码生成映射表row string
+		function getMapRowString(id) {
+			var str = "<tr id='" + id + "'>" +
+						  "<td><input type='text' placeholder='必填' name='orgin_key[]'></td>" + 
+						  "<td><input type='text' placeholder='选填' name='new_key[]'></td>" + 
+						  "<td>" + 
+						  "	 <a class='delete_param_button'><i class='icon-minus'></i></a>" + 
+						  "</td>" + 
+				      "</tr>";
+			return str;
+		}
+
+		// 设置伪数据框
+		$(function() {
+			$(".lined").linedtextarea(
+				{selectedLine: 1}
+			);
+		});
+
+
+		// 添加参数表事件
+		$("table td a").click(function() {
+			var row = $(this).parents("tr");
+			if ($(this).hasClass("delete_param_button")) {
+				row.remove();
+			} else {
+				var table = $(this).parents("table");
+				if ($(this).hasClass("add_model_param_button")) {
+					addTableRow(table, getMapRowString);
+				} else if ($(this).hasClass("add_input_param_button")) {
+					addTableRow(table, getInputParamRowString);
+				} else if ($(this).hasClass("add_success_out_param_button")) {
+					addTableRow(table, getOutputSuccessParamRowString);
+				} else if ($(this).hasClass("add_fail_out_param_button")) {
+					addTableRow(table, getOutputFailParamRowString);
+				}
+			}
+		});
+
+
+		// 刷新输出参数
+		function refreshOutputParams(table, data) {
+			table.find("tbody tr").each(function() {
+				$(this).remove();
+			})
+			var func;
+			if (table.hasClass("output-success-table")) {
+				func = getOutputSuccessParamRowString;
+			} else {
+				func = getOutputFailParamRowString;
+			}
+			var jsonObject = $.parseJSON(data);
+			parseKeyPath(table, jsonObject, "", func, false);
+		}
+
+		function parseKeyPath(table, object, keyPath, rowFunc, isArray) {
+			if (object != null && object != undefined) {
+				if (object.constructor == Array) {
+					if (keyPath != "") {
+						var row = addTableRow(table, rowFunc);
+						row.find("td:first input").val(keyPath.substring(0, keyPath.length-1));
+						row.find("td:eq(3) input").val("Array");
+						parseKeyPath(table, object[0], keyPath, rowFunc, true);
+					}
+				} else {
+					if (object.constructor == Object) {
+						if (keyPath != "") {
+							if (!isArray) {
+								var row = addTableRow(table, rowFunc);
+								row.find("td:first input").val(keyPath.substring(0, keyPath.length-1));
+								row.find("td:eq(3) input").val("Dictonary");
+							}
+							parseKeyPath(table, object[0], keyPath, rowFunc);
+						}
+						for (var key in object) {
+							if (object.hasOwnProperty(key)) {
+								var value = object[key];
+								if (value.constructor == String || value.constructor == Number) {
+									var row = addTableRow(table, rowFunc);
+									row.find("td:first input").val(keyPath + key);
+									row.find("td:eq(1) input").val(object[key]);
+									row.find("td:eq(3) input").val(classType(object[key]));
+								} else {
+									parseKeyPath(table, value, keyPath + key + '.', rowFunc, false);
+								}
+							}
+						}
+					}
+				}
+			}
+
+		}
+
+
+
+		$("#refresh-input-params-button").click(function() {
+			var url = $(this).prev("input").val();
+
+			params = paramsFromURL(url);
+			if (Object.size(params) > 0) {
+				var table = $("#input_params_table");
+				// remove old params
+				table.find("tbody tr").each(function() {
+					$(this).remove();
+				})
+				// add new ones
+				for (name in params) {
+					var row = addTableRow(table, getInputParamRowString);
+					row.find("td:first input").val(name);
+					row.find("td:eq(1) input").val(params[name]);
+				}
+			}
+		})
+
+		// 刷新output数据事件
+		$(".refresh-output-button").click(function() {
+			// refresh input params
+			var parent_div = $(this).parent().parent();
+			var url = $(this).prev("input").val();
+
+			var output_table = parent_div.children("table");
+			var textarea = parent_div.find("textarea");
+			// refresh output
+			$.get("{:U('interface/refresh')}", {"url": url}, function(data, status) {
+				// set output to textarea
+				textarea.val(format(data));
+
+				// set output params
+				refreshOutputParams(output_table, data);
+			})
+		})
+
+		// 格式化成功时的伪数据
+		$(".format-output-button").click(function() {
+			var textarea = $(this).parent().parent().find("textarea");
+			textarea.val(format(textarea.val()))
+		})
+
+		//
+		$(".output-gen-button").click(function() {
+			var output_table = $(this).parent().parent().children("table");
+			var textarea = $(this).parent().parent().find("textarea");
+
+			refreshOutputParams(output_table, deformatJson(textarea.val()));
+		})
+
+	
+	})
+	
+</script>

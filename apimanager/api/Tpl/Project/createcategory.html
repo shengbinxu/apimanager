@@ -1,0 +1,31 @@
+<!-- navigation bar -->
+<header>
+	<div class="container navi-breadcrumb">
+		<ul class="breadcrumb">
+			<li><a href="{:U('/index/')}">项目列表</a><span class="divider">/</span> </li>
+        	<li><a class="active" href="{:U('project/index')}?id={$data.id}">{$data.name}</a></li>
+           
+		</ul>
+	</div>
+</header>
+
+<!-- body container -->
+<div class="container">
+	<form action="{:U('project/createcategory')}" method="POST">
+		<!-- basic information	 -->
+		<legend>基本信息</legend>
+		<label for="">分类名称</label>
+		<input type="text" name="name" placeholder="必填" value="">
+		<label for="">项目名称</label>
+		<input type="text" name="projectname" placeholder="必填" value="{$data.name}">
+
+
+		<div class="row">
+			<div class="span4 offset4">
+				<a href="javascript:void(0);" onclick="javascript:history.go(-1);"  class="btn btn-large interface-button" >取消并返回</a>
+				<button class="btn btn-large btn-success interface-button"  type="submit">提交分类</button>
+			</div>
+		</div>
+	</form>
+</div> <!-- body container -->
+

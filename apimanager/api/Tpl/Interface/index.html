@@ -1,0 +1,37 @@
+<!-- sub header -->
+<header>
+	<div class="container navi-breadcrumb">
+		<ul class="breadcrumb">
+			<li><a href="{:U('/index/')}">项目列表</a> <span class="divider">/</span> </li>
+            <li><a href="{:U('project/index')}?id={$data.id}">{$data.name}</a><span class="divider">/</span></li>
+            <li><a class="active" href="{:U('interface/index')}?projectid={$data.id}">接口列表</a><span class="divider">/</span></li>
+		</ul>
+	</div>
+</header>
+
+<!-- body container -->
+<div class="container">
+	<a href="{:U('interface/create')}?projectid={$data.id}" class="btn" style="margin-top:20px">新增接口</a>
+	<if condition="$interfaceList">
+		<table class="table table-bordered" style="margin-top:20px">
+			<foreach name="interfaceList" item="vo" key="k">
+				<tr class="info"><td>{$k}</td></tr>
+				<foreach name="vo" item="v" key="key">
+					<tr>
+						<td>
+							<p class="interface-info">
+								<a href="{:U('interface/detail')}?id={$v.id}">
+									{$v.name}
+								</a>
+							</p>
+							<p class="interface-subinfo">
+								<i class="icon-time"> </i>
+								更新时间: {$v['updated_at']|date="Y-m-d H:i:s",###}
+							</p>
+						</td>
+					</tr>
+				</foreach>
+			</foreach>
+		</table>
+	</if>
+</div>

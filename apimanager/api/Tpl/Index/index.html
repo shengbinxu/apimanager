@@ -1,0 +1,45 @@
+<!-- sub header -->
+<header class="subhead homepage-subhead">
+	<div class="container">
+		<div class="subhead-content">			
+			<h1>API管理工具</h1>
+		</div>
+	</div>
+</header>
+
+<!-- body container -->
+<div class="container">
+	<div class="row">
+    	<a href="{:U('project/create')}" class="btn" style="margin-top:20px">新增项目</a>
+	</div>
+	<volist name="list" id="vo">
+		<div class="row border-table-row">
+			<div class="span2 project-preview">
+				<a href="{:U('project/index')}?id={$vo.id}">
+	    			<img src="__ROOT__/res/img/project.png" class="img-polaroid" alt="">
+				</a>
+			</div>
+			<div class="span6 project-info">
+				<p><span class="lead">{$vo.name}</span>
+					<a href="{:U('project/index')}?id={$vo.id}" class=""><i class="icon-check"></i>查看</a>
+					<a href="{:U('project/edit')}?id={$vo.id}" class=""><i class="icon-edit"></i>编辑</a>
+				</p>
+				<p class="project-subinfo"><i class="icon-time"></i>创建时间: {$vo['created_at']|date="Y-m-d H:i:s",###}</p>
+				<if condition="$vo['updated_at']"><p class="project-subinfo"><i class="icon-time"></i>更新时间: {$vo['updated_at']|date="Y-m-d H:i:s",###}</p></if>
+				<p class="project-subinfo"><i class="icon-eye-open"></i>项目状态: {$projectStatus[$vo['status']]}</p>
+				<p class="project-subinfo">
+					<i class="icon-tag"></i>
+					<if condition="$vo['count']">
+						现有接口: <a href="{:U('interface/index')}?projectid={$vo.id}">{$vo['count']}</a> 
+					<else />
+						暂无接口
+					</if>
+				</p>
+			</div>
+			<div class="span2" style="margin-top:140px">
+				
+			</div>
+		</div>
+	</volist>
+
+</div> <!-- body container -->
